@@ -6,17 +6,18 @@ namespace MoodAnalyzerProgram
 {
     public class MoodAnalyzer
     {
-        /// <summary>
-        /// analyze mood to find status
-        /// </summary>
-        /// <param name="message"></param>
-        /// <returns></returns>
-       public string AnalyzeMood(string message)
+        public string message;
+        public MoodAnalyzer(string message)
         {
-            if (message.Contains("Happy"))
-                return "Happy";
-            else
+            this.message = message;
+        }
+       public string AnalyzeMood()
+        {
+            message = message.ToLower();
+            if (message.Contains("Sad"))
                 return "Sad";
+            else
+                return "Happy";
         }
     }
 }
